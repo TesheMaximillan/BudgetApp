@@ -19,6 +19,6 @@
 FactoryBot.define do
   factory :category do
     user { nil }
-    icon { "MyString" }
+    icon { "https://en.pimg.jp/060/799/223/1/60799223.jpg" }
   end
 end
