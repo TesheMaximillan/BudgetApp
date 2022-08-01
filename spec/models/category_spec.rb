@@ -58,10 +58,10 @@ RSpec.describe Category, type: :model do
         expect(category).to be_invalid
       end
 
-      it "is invalid when user_id is not unique" do
+      it "is valid when user_id is not unique" do
         create(:category)
         category = build(:category)
-        expect(category).to be_invalid
+        expect(category).to be_valid
       end
     end
   end
