@@ -40,12 +40,12 @@ RSpec.describe Category, type: :model do
     end
 
     context "when user_id is valid" do
-      it "is invalid user_id is not nil" do
+      it "is valid user_id is not nil" do
         category = build(:category)
         expect(category).to be_valid
       end
 
-      it "is invalid user_id is unique" do
+      it "is valid when user_id is not unique" do
         create(:category)
         category = build(:category)
         expect(category).to be_valid
@@ -57,12 +57,16 @@ RSpec.describe Category, type: :model do
         category = build(:category, user_id: nil)
         expect(category).to be_invalid
       end
+    end
 
-      it "is valid when user_id is not unique" do
-        create(:category)
-        category = build(:category)
-        expect(category).to be_valid
-      end
+    it "is invalid if user_id is string" do
+      budget_transaction = build(:budget_transaction, user_id: "string")
+      expect(budget_transaction).to be_invalid
+    end
+
+    it "is invalid if user_id is negative" do
+      budget_transaction = build(:budget_transaction, user_id: -1)
+      expect(budget_transaction).to be_invalid
     end
   end
 end
