@@ -58,5 +58,11 @@ RSpec.describe User, type: :model do
       user.email = "teshe@gmail.com"
       expect(user.valid?).to be false
     end
+
+    it "is invalid if the email is not a valid email" do
+      user = User.new
+      user.email = "teshe"
+      expect(user.valid?).to be false
+    end
   end
 end
