@@ -17,5 +17,6 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Category < ApplicationRecord
+  has_many :category_budget_transactions, dependent: :destroy
   belongs_to :user
 end
