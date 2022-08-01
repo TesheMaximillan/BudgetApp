@@ -21,5 +21,24 @@
 require 'rails_helper'
 
 RSpec.describe CategoryBudgetTransaction, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#valid?" do
+    context "when budget_transaction is valid" do
+      it "is valid" do
+        category_budget_transaction = build(:category_budget_transaction)
+        expect(category_budget_transaction).to be_valid
+      end
+
+      it "is valid when budget_transaction is not unique" do
+        create(:category_budget_transaction)
+        category_budget_transaction = build(:category_budget_transaction)
+        expect(category_budget_transaction).to be_valid
+      end
+
+      it "is valid when category is not unique" do
+        create(:category_budget_transaction)
+        category_budget_transaction = build(:category_budget_transaction)
+        expect(category_budget_transaction).to be_valid
+      end
+    end
+  end
 end
