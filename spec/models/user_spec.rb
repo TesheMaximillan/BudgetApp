@@ -25,6 +25,22 @@ RSpec.describe User, type: :model do
       expect(create_a_user).to be_valid
     end
 
+    it "is invalid without a name" do
+      expect(build(:user, name: nil)).to_not be_valid
+    end
+
+    it "is invalid if a name is too long" do
+      expect(build(:user, name: "a" * 51)).to_not be_valid
+    end
+
+    it "is invalid if a name is too short" do
+      expect(build(:user, name: "a")).to_not be_valid
+    end
+
+    it "is invalid if a name is empty whitespace" do
+      expect(build(:user, name: "     ")).to_not be_valid
+    end
+
     it "is invalid without an email" do
       expect(build(:user, email: nil)).to_not be_valid
     end
