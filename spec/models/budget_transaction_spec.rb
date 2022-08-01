@@ -20,5 +20,29 @@
 require 'rails_helper'
 
 RSpec.describe BudgetTransaction, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#valid?" do
+    context "when amount is valid" do
+      it "is valid" do
+        budget_transaction = build(:budget_transaction)
+        expect(budget_transaction).to be_valid
+      end
+    end
+
+    context "when amount is invalid" do
+      it "is invalid if amount is nil" do
+        budget_transaction = build(:budget_transaction, amount: nil)
+        expect(budget_transaction).to be_invalid
+      end
+
+      it "is invalid if amount is negative" do
+        budget_transaction = build(:budget_transaction, amount: -1)
+        expect(budget_transaction).to be_invalid
+      end
+
+      it "is invalid if amount is string" do
+        budget_transaction = build(:budget_transaction, amount: "string")
+        expect(budget_transaction).to be_invalid
+      end
+    end
+  end
 end
