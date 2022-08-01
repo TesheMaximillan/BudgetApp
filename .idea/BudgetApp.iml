@@ -39,6 +39,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v7.0.3.1, ruby-3.1.2-p20) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.0.3.1, ruby-3.1.2-p20) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.0.3.1, ruby-3.1.2-p20) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="annotate (v3.2.0, ruby-3.1.2-p20) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, ruby-3.1.2-p20) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.13.0, ruby-3.1.2-p20) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, ruby-3.1.2-p20) [gem]" level="application" />
@@ -109,6 +110,7 @@
       <list>
         <option value="active_record:application_record" />
         <option value="active_record:multi_db" />
+        <option value="annotate:install" />
         <option value="application_record" />
         <option value="benchmark" />
         <option value="channel" />
@@ -163,6 +165,7 @@
       <list>
         <option value="active_record:application_record" />
         <option value="active_record:multi_db" />
+        <option value="annotate:install" />
         <option value="application_record" />
         <option value="benchmark" />
         <option value="channel" />
