@@ -19,8 +19,8 @@
 #
 FactoryBot.define do
   factory :budget_transaction do
-    user { nil }
+    user { User.first || create(:user) }
     name { "MyString" }
-    amount { "9.99" }
+    amount { 1.5 }
   end
 end

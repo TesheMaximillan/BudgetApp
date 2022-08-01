@@ -20,7 +20,7 @@
 #
 FactoryBot.define do
   factory :category_budget_transaction do
-    category { nil }
-    budget_transaction { nil }
+    category { Category.first || create(:category) }
+    budget_transaction { BudgetTransaction.first || create(:budget_transaction) }
   end
 end

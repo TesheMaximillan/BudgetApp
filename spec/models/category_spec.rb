@@ -19,5 +19,24 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#valid?" do
+    context "when icon is valid" do
+      it "is valid" do
+        category = build(:category)
+        expect(category).to be_valid
+      end
+    end
+
+    context "when icon is invalid" do
+      it "is invalid if icon is nil" do
+        category = build(:category, icon: nil)
+        expect(category).to be_invalid
+      end
+
+      it "is invalid if icon is not a URL" do
+        category = build(:category, icon: "not a URL")
+        expect(category).to_not be_valid
+      end
+    end
+  end
 end
