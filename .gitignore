@@ -31,3 +31,6 @@
 /config/master.key
 .idea/
 /config/local_env.yml
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
