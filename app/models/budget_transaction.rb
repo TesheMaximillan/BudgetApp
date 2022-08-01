@@ -20,4 +20,6 @@
 class BudgetTransaction < ApplicationRecord
   has_many :category_budget_transactions, dependent: :destroy
   belongs_to :user
+  validates :name, presence: true, length: { minimum: 3, maximum: 50 }
+  validates :amount, presence: true, numericality: { greater_than: 0 }
 end
