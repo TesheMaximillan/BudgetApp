@@ -25,5 +25,8 @@ FactoryBot.define do
   factory :user do
     name { "Teshome Kurabachew" }
     email  { "#{SecureRandom.hex(4)}@example.org" }
+    password { "password" }
+    password_confirmation { "password" }
+    confirmed_at { Time.now }
   end
 end
