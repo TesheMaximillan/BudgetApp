@@ -44,5 +44,39 @@ RSpec.describe BudgetTransaction, type: :model do
         expect(budget_transaction).to be_invalid
       end
     end
+
+    context "when name is valid" do
+      it "is valid" do
+        budget_transaction = build(:budget_transaction)
+        expect(budget_transaction).to be_valid
+      end
+    end
+
+    context "when name is invalid" do
+      it "is invalid if name is nil" do
+        budget_transaction = build(:budget_transaction, name: nil)
+        expect(budget_transaction).to be_invalid
+      end
+
+      it "is invalid if name is empty" do
+        budget_transaction = build(:budget_transaction, name: "")
+        expect(budget_transaction).to be_invalid
+      end
+
+      it  "is invalid if name is too many whitespace" do
+        budget_transaction = build(:budget_transaction, name: "   ")
+        expect(budget_transaction).to be_invalid
+      end
+
+      it "is invalid if name is too long" do
+        budget_transaction = build(:budget_transaction, name: "a" * 51)
+        expect(budget_transaction).to be_invalid
+      end
+
+      it "is invalid if name is too short" do
+        budget_transaction = build(:budget_transaction, name: "a")
+        expect(budget_transaction).to be_invalid
+      end
+    end
   end
 end
