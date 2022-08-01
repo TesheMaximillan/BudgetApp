@@ -48,12 +48,12 @@ RSpec.describe CategoryBudgetTransaction, type: :model do
       end
 
       it "is invalid if budget_transaction is not a number" do
-        category_budget_transaction = build(:category_budget_transaction, budget_transaction: "not a number")
+        category_budget_transaction = build(:category_budget_transaction, budget_transaction_id: "not a number")
         expect(category_budget_transaction).to be_invalid
       end
 
       it "is invalid if budget_transaction is negative" do
-        category_budget_transaction = build(:category_budget_transaction, budget_transaction: -1)
+        category_budget_transaction = build(:category_budget_transaction, budget_transaction_id: -1)
         expect(category_budget_transaction).to be_invalid
       end
 
@@ -63,12 +63,12 @@ RSpec.describe CategoryBudgetTransaction, type: :model do
       end
 
       it "is invalid if category is not a number" do
-        category_budget_transaction = build(:category_budget_transaction, category: "not a number")
+        category_budget_transaction = build(:category_budget_transaction, category_id: "not a number")
         expect(category_budget_transaction).to be_invalid
       end
 
       it "is invalid if category is negative" do
-        category_budget_transaction = build(:category_budget_transaction, category: -1)
+        category_budget_transaction = build(:category_budget_transaction, category_id: -1)
         expect(category_budget_transaction).to be_invalid
       end
     end
