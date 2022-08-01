@@ -15,14 +15,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  def create_a_user(
-    email: "#{SecureRandom.hex(4)}@example.com")
-    User.create!(email: email, name: "John Doe")
-  end
-
   describe "#valid?" do
     it "has a valid factory" do
-      expect(create_a_user).to be_valid
+      expect(build(:user)).to be_valid
     end
 
     it "is invalid without a name" do
@@ -45,24 +40,15 @@ RSpec.describe User, type: :model do
       expect(build(:user, email: nil)).to_not be_valid
     end
 
-    it "is invalid with a duplicate email" do
-      create_a_user
-      user = User.new
-      user.email = "teshe@gmail.com"
-      expect(user.valid?).to be false
-    end
-
     it "is invalid if the email is taken" do
-      create_a_user
-      user = User.new
-      user.email = "teshe@gmail.com"
-      expect(user.valid?).to be false
+      create(:user)
+      user = build(:user)
+      expect(user).to_not be_valid
     end
 
     it "is invalid if the email is not a valid email" do
-      user = User.new
-      user.email = "teshe"
-      expect(user.valid?).to be false
+      user = build(:user, email: "not an email")
+      expect(user).to_not be_valid
     end
   end
 end
