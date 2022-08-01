@@ -41,8 +41,8 @@ RSpec.describe User, type: :model do
     end
 
     it "is invalid if the email is taken" do
-      create(:user)
-      user = build(:user)
+      create(:user, email: "teshe@gmail.com")
+      user = build(:user, email: "teshe@gmail.com")
       expect(user).to_not be_valid
     end
 
