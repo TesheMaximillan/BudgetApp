@@ -78,5 +78,35 @@ RSpec.describe BudgetTransaction, type: :model do
         expect(budget_transaction).to be_invalid
       end
     end
+
+    context "when user_id is valid" do
+      it "is valid" do
+        budget_transaction = build(:budget_transaction)
+        expect(budget_transaction).to be_valid
+      end
+
+      it "is valid if user_id is not unique" do
+        create(:budget_transaction)
+        budget_transaction = build(:budget_transaction)
+        expect(budget_transaction).to be_valid
+      end
+    end
+
+    context "when user_id is invalid" do
+      it "is invalid if user_id is nil" do
+        budget_transaction = build(:budget_transaction, user_id: nil)
+        expect(budget_transaction).to be_invalid
+      end
+
+      it "is invalid if user_id is string" do
+        budget_transaction = build(:budget_transaction, user_id: "string")
+        expect(budget_transaction).to be_invalid
+      end
+
+      it "is invalid if user_id is negative" do
+        budget_transaction = build(:budget_transaction, user_id: -1)
+        expect(budget_transaction).to be_invalid
+      end
+    end
   end
 end
