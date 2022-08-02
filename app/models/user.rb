@@ -38,4 +38,6 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with:  URI::MailTo::EMAIL_REGEXP,
                                               message: "Must be a valid email address" },
             uniqueness: { case_sensitive: false, unique: true }
+  validates :password, presence: true, length: { minimum: 6, maximum: 20 }, confirmation: true
+  validates :password_confirmation, presence: true, length: { minimum: 6, maximum: 20 }
 end
