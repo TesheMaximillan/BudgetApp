@@ -26,6 +26,17 @@
       text-align: center;
       font-weight: bold;
       padding: 1rem;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: var(--main-dark);
+        color: var(--white);
+      }
+
+      &:hover,
+      &:active {
+        transform: translateY(-0.2rem);
+      }
     }
 
     .btn-login {

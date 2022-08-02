@@ -11,7 +11,8 @@
 
 <body>
   <main class="container">
-    <div class="m-auto w-84 md:w-96">
+    <%= render "layouts/header" %>
+    <div class="main">
       <%= render "layouts/alert" %>
       <%= yield %>
     </div>
