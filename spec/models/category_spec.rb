@@ -4,6 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  icon       :string           not null
+#  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :bigint           not null
@@ -57,16 +58,16 @@ RSpec.describe Category, type: :model do
         category = build(:category, user_id: nil)
         expect(category).to be_invalid
       end
-    end
 
-    it "is invalid if user_id is string" do
-      budget_transaction = build(:budget_transaction, user_id: "string")
-      expect(budget_transaction).to be_invalid
-    end
+      it "is invalid if user_id is string" do
+        budget_transaction = build(:budget_transaction, user_id: "string")
+        expect(budget_transaction).to be_invalid
+      end
 
-    it "is invalid if user_id is negative" do
-      budget_transaction = build(:budget_transaction, user_id: -1)
-      expect(budget_transaction).to be_invalid
+      it "is invalid if user_id is negative" do
+        budget_transaction = build(:budget_transaction, user_id: -1)
+        expect(budget_transaction).to be_invalid
+      end
     end
   end
 end

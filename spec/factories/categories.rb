@@ -4,6 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  icon       :string           not null
+#  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :bigint           not null
@@ -19,6 +20,7 @@
 FactoryBot.define do
   factory :category do
     user { User.first || create(:user) }
+    name { "MyString" }
     icon { "https://en.pimg.jp/060/799/223/1/60799223.jpg" }
   end
 end
