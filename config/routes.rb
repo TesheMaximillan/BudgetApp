@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'home/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "home#index"
+  root to: "home#index"
+
+  authenticated :user do
+    resources :categories, param: :user do
+      resources :budget_transactions
+    end
+  end
 end
