@@ -69,5 +69,12 @@ RSpec.describe Category, type: :model do
         expect(budget_transaction).to be_invalid
       end
     end
+
+    context "when name is valid" do
+      it "is valid when name is not nil" do
+        category = build(:category)
+        expect(category).to be_valid
+      end
+    end
   end
 end
