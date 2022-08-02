@@ -1,10 +1,12 @@
 <% if notice&.present? %>
-  <div class=" bg-blue-500 alert" role="alert">
+  <div class="notice" role="alert">
+    <i class="fa-regular fa-circle-check icon-success" ></i>
     <%= notice %>
   </div>
 <% end %>
 <% if alert&.present? %>
-  <div class=" bg-red-500 alert" role="alert">
+  <div class="alert" role="alert">
+    <i class="fa-solid fa-circle-exclamation icon-warning"></i>
     <%= alert %>
   </div>
 <% end %>
