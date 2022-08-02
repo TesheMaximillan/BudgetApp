@@ -61,4 +61,43 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_valid
     end
   end
+
+  describe "#password" do
+    it "is invalid if the password is too short" do
+      user = build(:user, password: "a" * 5)
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid if the password is too long" do
+      user = build(:user, password: "a" * 21)
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid if the password is empty whitespace" do
+      user = build(:user, password: "     ")
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid if the password is empty" do
+      user = build(:user, password: nil)
+      expect(user).to_not be_valid
+    end
+  end
+
+  describe "#password_confirmation" do
+    it "is invalid if the password_confirmation is not the same as the password" do
+      user = build(:user, password_confirmation: "not the same")
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid if the password_confirmation is empty" do
+      user = build(:user, password_confirmation: nil)
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid if the password_confirmation is empty whitespace" do
+      user = build(:user, password_confirmation: "     ")
+      expect(user).to_not be_valid
+    end
+  end
 end
