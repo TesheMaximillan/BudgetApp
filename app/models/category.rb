@@ -20,6 +20,7 @@
 class Category < ApplicationRecord
   has_many :category_budget_transactions, dependent: :destroy
   belongs_to :user
+  validates :name, presence: true, length: { minimum: 3, maximum: 50 }
   VALID_URL_REGEX = /\A(http|https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\z/i
   validates :icon, presence: true, format: { with: VALID_URL_REGEX }
 end
