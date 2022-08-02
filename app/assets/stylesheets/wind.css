@@ -1,3 +1,16 @@
+.alert {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -601,10 +614,6 @@ video {
   }
 }
 
-.absolute {
-  position: absolute;
-}
-
 .m-auto {
   margin: auto;
 }
@@ -623,10 +632,6 @@ video {
 
 .inline {
   display: inline;
-}
-
-.hidden {
-  display: none;
 }
 
 .bg-blue-500 {
@@ -650,14 +655,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:block {
-    display: block;
-  }
-
-  .md\:hidden {
-    display: none;
-  }
-
   .md\:w-96 {
     width: 24rem;
   }
