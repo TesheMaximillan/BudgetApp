@@ -76,5 +76,32 @@ RSpec.describe Category, type: :model do
         expect(category).to be_valid
       end
     end
+
+    context "when name is invalid" do
+      it "is invalid when name is nil" do
+        category = build(:category, name: nil)
+        expect(category).to be_invalid
+      end
+
+      it "is invalid when name is empty string" do
+        category = build(:category, name: "")
+        expect(category).to be_invalid
+      end
+
+      it "is invalid when name is too long" do
+        category = build(:category, name: "a" * 51)
+        expect(category).to be_invalid
+      end
+
+      it "is invalid when name is too short" do
+        category = build(:category, name: "a")
+        expect(category).to be_invalid
+      end
+
+      it "is invalid when name is empty whitespace" do
+        category = build(:category, name: "     ")
+        expect(category).to be_invalid
+      end
+    end
   end
 end
