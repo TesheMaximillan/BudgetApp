@@ -1,3 +1,21 @@
 <div class="header">
-  <i class="fa fa-bars" aria-hidden="true"></i>
+  <div class="header__icon">
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-arrow-left icon" ></i>
+    <% end %>
+  </div>
+  <div class="header__title">
+    <%- if controller_name == 'sessions' %>
+      <h2 class="title">LOGIN</h2>
+    <%- else %>
+      <h2 class="title">SIGNUP</h2>
+    <% end %>
+  </div>
+  <div class="header__nav" >
+    <%- if controller_name == 'sessions' %>
+      <P>log In</P>
+    <%- else %>
+      <p class="title">Next</p>
+    <% end %>
+  </div>
 </div>
