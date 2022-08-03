@@ -20,4 +20,8 @@ puts "[db/seeds.rb] Seeding data..."
 FactoryBot.create_list(:user, 10)
 FactoryBot.create_list(:category, 10)
 FactoryBot.create_list(:budget_transaction, 10)
+
+Category.all.each do |category|
+  category.budget_transactions << BudgetTransaction.all.sample(rand(1..BudgetTransaction.count))
+end
 puts "[db/seeds.rb] Seeding data...done"

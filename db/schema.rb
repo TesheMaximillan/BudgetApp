@@ -51,19 +51,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_070123) do
     t.index ["user_id"], name: "index_budget_transactions_on_user_id"
   end
 
+  create_table "budget_transactions_categories", id: false, force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "budget_transaction_id", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name", null: false
     t.index ["user_id"], name: "index_categories_on_user_id"
-  end
-
-  create_table "categories_budget_transactions", id: false, force: :cascade do |t|
-    t.bigint "category_id"
-    t.bigint "budget_transaction_id"
-    t.index ["budget_transaction_id"], name: "index_categories_budget_transactions_on_budget_transaction_id"
-    t.index ["category_id"], name: "index_categories_budget_transactions_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
