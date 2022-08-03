@@ -27,13 +27,6 @@ RSpec.describe Category, type: :model do
       end
     end
 
-    context "when icon is invalid" do
-      it "is invalid if icon is nil" do
-        category = build(:category, icon: nil)
-        expect(category).to be_invalid
-      end
-    end
-
     context "when user_id is valid" do
       it "is valid user_id is not nil" do
         category = build(:category)
