@@ -1,14 +1,34 @@
 <div class="header">
   <div class="header__icon">
-    <%= link_to root_path do %>
-      <i class="fa-solid fa-arrow-left icon" ></i>
+    <% if controller_name == 'budget_transactions' && action_name == 'index'%>
+      <%= link_to categories_path do %>
+        <i class="fa-solid fa-arrow-left icon" ></i>
+      <% end %>
+    <% elsif controller_name == 'budget_transactions' && action_name == 'new' %>
+      <%= link_to category_budget_transactions_path do %>
+        <i class="fa-solid fa-arrow-left icon" ></i>
+      <% end %>
+    <% elsif controller_name == 'categories' && action_name == 'new' %>
+      <%= link_to categories_path do %>
+        <i class="fa-solid fa-arrow-left icon" ></i>
+      <% end %>
+    <% else %>
+      <%= link_to root_path do %>
+        <i class="fa-solid fa-arrow-left icon" ></i>
+      <% end %>
     <% end %>
   </div>
   <div class="header__title">
     <%- if controller_name == 'sessions' %>
       <h2 class="title">LOGIN</h2>
-    <%- else %>
+    <%- elsif controller_name == 'registrations' %>
       <h2 class="title">SIGNUP</h2>
+    <%- elsif controller_name == 'categories' && action_name == 'index' %>
+      <h2 class="title">CATEGORIES</h2>
+    <%- elsif controller_name == 'categories' && action_name == 'new' %>
+      <h2 class="title">NEW CATEGORY</h2>
+    <%- else %>
+      <h2 class="title">NEW TRANSACTION</h2>
     <% end %>
   </div>
   <div class="header__nav" >
