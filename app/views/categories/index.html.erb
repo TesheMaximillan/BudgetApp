@@ -1,2 +1,11 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<%= render "layouts/header" %>
+
+<% @categories.each do |category| %>
+  <%= image_tag category.icon %>
+  <%= category.name %>
+  <% total_transaction = 0 %>
+  <% category.budget_transactions.each do |transaction| %>
+    <% total_transaction += transaction.amount %>
+  <% end %>
+  <%= total_transaction %>
+<% end %>
