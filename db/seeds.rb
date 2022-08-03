@@ -15,11 +15,9 @@ require 'factory_bot'
 User.destroy_all
 Category.destroy_all
 BudgetTransaction.destroy_all
-CategoryBudgetTransaction.destroy_all
 
 puts "[db/seeds.rb] Seeding data..."
 FactoryBot.create_list(:user, 10)
 FactoryBot.create_list(:category, 10)
 FactoryBot.create_list(:budget_transaction, 10)
-FactoryBot.create_list(:category_budget_transaction, 10)
 puts "[db/seeds.rb] Seeding data...done"
