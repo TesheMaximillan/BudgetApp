@@ -115,9 +115,6 @@
     width: 50%;
     display: flex;
     font-family: inherit;
-    z-index: 1;
-    transform: translateY(-8.3rem);
-    margin-left: 1rem;
 
     .submit-btn {
       width: 95%;
@@ -162,4 +159,15 @@
   width: 100%;
   border: none;
   text-decoration: underline 1px var(--main);
+}
+
+.category-btn {
+  z-index: 1;
+  transform: translateY(-8.3rem);
+  margin-left: 1rem;
+}
+
+.login-btn,
+.signup-btn {
+  margin-top: 2rem;
 }
