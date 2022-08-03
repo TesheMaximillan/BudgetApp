@@ -3,22 +3,10 @@
 
   <div class="category-container--cards">
     <% @categories.each do |category| %>
-      <div class="card">
-        <div class="card__img">
-          <%= image_tag category.icon, class: "img" %>
-        </div>
-        <div class="card__title">
-          <P><%= category.name %></P>
-        </div>
-        <% total_transaction = 0 %>
-        <% category.budget_transactions.each do |transaction| %>
-          <% total_transaction += transaction.amount %>
-        <% end %>
-        <div class="card__transaction-amount">
-          $ <%= '%.2f' % total_transaction %>
-        </div>
-      </div>
+      <%= link_to category_budget_transactions_path(category), class: "card-link" do %>
+        <%= render partial: "partials/category_card", locals: { category: category} %>
       <% end %>
+    <% end %>
   </div>
 
   <%= link_to "Add Category", new_category_path, class: "add-btn" %>
