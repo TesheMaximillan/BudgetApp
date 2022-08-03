@@ -3,7 +3,7 @@
 # Table name: categories
 #
 #  id         :bigint           not null, primary key
-#  icon       :string           not null
+#  icon       :binary           not null
 #  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -21,6 +21,8 @@ FactoryBot.define do
   factory :category do
     user { User.first || create(:user) }
     name { "MyString" }
-    icon { "https://en.pimg.jp/060/799/223/1/60799223.jpg" }
+
+    link_to_default_icon = Rails.root.join('spec', 'factories', 'files', 'default_icon.jpg')
+    icon { Rack::Test::UploadedFile.new(link_to_default_icon) }
   end
 end

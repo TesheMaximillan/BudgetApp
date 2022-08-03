@@ -3,7 +3,7 @@
 # Table name: categories
 #
 #  id         :bigint           not null, primary key
-#  icon       :string           not null
+#  icon       :binary           not null
 #  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -20,7 +20,7 @@
 class Category < ApplicationRecord
   has_and_belongs_to_many :budget_transactions, dependent: :destroy
   belongs_to :user
+  has_one_attached :icon
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
-  VALID_URL_REGEX = /\A(http|https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\z/i
-  validates :icon, presence: true, format: { with: VALID_URL_REGEX }
+  validates :icon, presence: true
 end

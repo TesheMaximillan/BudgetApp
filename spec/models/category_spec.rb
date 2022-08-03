@@ -3,7 +3,7 @@
 # Table name: categories
 #
 #  id         :bigint           not null, primary key
-#  icon       :string           not null
+#  icon       :binary           not null
 #  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -32,11 +32,6 @@ RSpec.describe Category, type: :model do
       it "is invalid if icon is nil" do
         category = build(:category, icon: nil)
         expect(category).to be_invalid
-      end
-
-      it "is invalid if icon is not a URL" do
-        category = build(:category, icon: "not a URL")
-        expect(category).to_not be_valid
       end
     end
 
