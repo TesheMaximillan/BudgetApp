@@ -27,6 +27,11 @@
       font-weight: bold;
       padding: 1rem;
       transition: all 0.3s ease-in-out;
+    }
+
+    .btn-login {
+      background-color: var(--main);
+      color: var(--white);
 
       &:hover {
         background-color: var(--main-dark);
@@ -39,13 +44,20 @@
       }
     }
 
-    .btn-login {
-      background-color: var(--main);
-      color: var(--white);
-    }
-
     .btn-signup {
-      color: var(--main);
+      background-color: var(--second);
+      color: var(--white);
+      margin-top: 1rem;
+
+      &:hover {
+        background-color: var(--second-dark);
+        color: var(--white);
+      }
+
+      &:hover,
+      &:active {
+        transform: translateY(-0.2rem);
+      }
     }
   }
 }

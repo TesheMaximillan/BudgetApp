@@ -45,6 +45,37 @@
         font-family: inherit;
       }
     }
+
+    &--file {
+      color: var(--main);
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-family: inherit;
+      &::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+    }
+
+
+    &--file::before {
+      content: 'Upload Icon';
+      display: block;
+      width: 80%;
+      margin: 2rem 1rem;
+      padding: 1rem;
+      border: none;
+      background-color: var(--main);
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.6rem;
+      font-family: inherit;
+      color: var(--white);
+      outline: none;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
   }
 
   &__login-options {
@@ -80,15 +111,16 @@
   }
 
   &__actions {
-    margin-top: 3rem;
-    align-self: center;
-    width: 100%;
+    align-self: end;
+    width: 50%;
     display: flex;
-    justify-content: center;
     font-family: inherit;
+    z-index: 1;
+    transform: translateY(-8.3rem);
+    margin-left: 1rem;
 
     .submit-btn {
-      width: 50%;
+      width: 95%;
       text-align: center;
       font-weight: bold;
       font-size: 1.6rem;
@@ -96,13 +128,13 @@
       padding: 1rem;
       border: none;
       transition: all 0.3s ease-in-out;
-      background-color: var(--main);
+      background-color: var(--second);
       color: var(--white);
       cursor: pointer;
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 
       &:hover {
-        background-color: var(--main-dark);
+        background-color: var(--second-dark);
         color: var(--white);
         transform: translateY(-0.2rem);
       }
