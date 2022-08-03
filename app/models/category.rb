@@ -3,7 +3,6 @@
 # Table name: categories
 #
 #  id         :bigint           not null, primary key
-#  icon       :binary           not null
 #  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -22,5 +21,4 @@ class Category < ApplicationRecord
   belongs_to :user
   has_one_attached :icon
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
-  validates :icon, presence: true
 end

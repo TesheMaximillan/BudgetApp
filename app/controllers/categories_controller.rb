@@ -8,20 +8,17 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(user: current_user, name: category_params[:name])
+    @category = Category.new(user: current_user, name: category_params[:name], icon: category_params[:icon])
     if @category.save
-      flash[:notice] = "Category created successfully"
-      redirect_to categories_path
+      redirect_to categories_path, notice: 'Category was successfully created.'
     else
-      error = @category.errors.full_messages.join(", ")
-      flash[:alert] = error
-      render :new
+      render :new, alert: 'Category was not created.'
     end
   end
 
   private
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :icon)
   end
 end
