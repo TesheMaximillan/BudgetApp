@@ -2,7 +2,9 @@
   <%= render partial: "partials/category_card", locals: { category: @category} %>
 
   <div class="category-container--cards">
-
+    <% @budget_transactions.each do |transaction| %>
+      <%= render partial: "partials/transaction_card", locals: { transaction: transaction} %>
+    <% end %>
   </div>
 
   <%= link_to "Add Transaction", new_category_budget_transaction_path, class: "add-btn" %>
