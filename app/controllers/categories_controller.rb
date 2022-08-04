@@ -9,7 +9,9 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(user: current_user, name: category_params[:name], icon: category_params[:icon])
-    if @category.save
+    if !category_params[:icon].present?
+      redirect_to new_category_path, alert: 'Please Upload Image'
+    elsif @category.save
       redirect_to categories_path, notice: 'Category was successfully created.'
     else
       render :new, alert: 'Category was not created.'
