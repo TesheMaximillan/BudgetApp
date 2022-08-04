@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all.where(user: current_user)
+    @categories = Category.all.where(user: current_user).order(created_at: :desc)
   end
 
   def new

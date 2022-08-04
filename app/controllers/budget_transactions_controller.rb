@@ -1,7 +1,7 @@
 class BudgetTransactionsController < ApplicationController
   def index
     @category = Category.find(params[:category_id])
-    @budget_transactions = @category.budget_transactions
+    @budget_transactions = @category.budget_transactions.order(created_at: :desc)
   end
 
   def new
