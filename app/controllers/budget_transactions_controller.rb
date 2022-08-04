@@ -10,8 +10,8 @@ class BudgetTransactionsController < ApplicationController
 
   def create
     @category = Category.find(params[:category_id])
-    @budget_transaction = BudgetTransaction.new(name: params[:name], amount: params[:amount])
-    @budget_transaction.user_id = current_user.id
+    @budget_transaction = BudgetTransaction.new(user: current_user, name: params[:name], amount: params[:amount])
+
     if @budget_transaction.save
       @category.budget_transactions << @budget_transaction
       redirect_to category_budget_transactions_path(category_id: @category.id), notice: 'Budget transaction was successfully created.'
