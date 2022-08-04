@@ -27,9 +27,9 @@
   </div>
   <div class="header__nav" >
     <%- if controller_name == 'sessions' %>
-      <P>log In</P>
-    <%- elsif controller_name == 'sessions' %>
-      <P>Sign Up</P>
+      <%= link_to "Sign Up", new_user_registration_path, class: "session-nav" %>
+    <%- elsif controller_name == 'registrations' %>
+      <%= link_to "Login", new_user_session_path, class: "session-nav" %>
   <%- else %>
       <%= button_to raw(' <i class="fa-solid fa-right-from-bracket"></i>'), destroy_user_session_path, method: :delete, class: 'logout' %>
     <% end %>
