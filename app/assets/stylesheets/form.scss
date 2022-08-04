@@ -4,14 +4,13 @@
   flex-direction: column;
 
   &__field {
-
     .user-profile {
       width: 100%;
       display: flex;
       align-items: center;
       background-color: var(--white);
       border-bottom: 1px solid var(--light-grey-2);
-      padding: .5rem;
+      padding: 0.5rem;
       color: var(--light-grey-2);
 
       .img {
@@ -23,7 +22,7 @@
     }
 
     .hidden {
-      display: none
+      display: none;
     }
 
     &--input {
@@ -35,6 +34,7 @@
       font-weight: 400;
       color: var(--text);
       font-family: inherit;
+
       &:focus {
         outline: none;
         border-bottom: 1px solid var(--main-dark);
@@ -51,11 +51,11 @@
       font-size: 1.6rem;
       font-weight: 400;
       font-family: inherit;
+
       &::-webkit-file-upload-button {
         visibility: hidden;
       }
     }
-
 
     &--file::before {
       content: 'Upload Icon';
@@ -100,9 +100,11 @@
         margin-right: 1rem;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
+
         &:hover {
           background-color: var(--main-dark);
         }
+
         &:checked {
           background-color: var(--main);
         }

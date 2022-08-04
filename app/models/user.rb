@@ -30,9 +30,9 @@ class User < ApplicationRecord
   has_many :categories, dependent: :destroy
   has_many :budget_transactions, dependent: :destroy
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
-  validates :email, presence: true, format: { with:  URI::MailTo::EMAIL_REGEXP,
-                                              message: "Must be a valid email address" },
-            uniqueness: { case_sensitive: false, unique: true }
+  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP,
+                                              message: 'Must be a valid email address' },
+                    uniqueness: { case_sensitive: false, unique: true }
   validates :password, presence: true, length: { minimum: 6, maximum: 20 }, confirmation: true
   validates :password_confirmation, presence: true, length: { minimum: 6, maximum: 20 }
 end

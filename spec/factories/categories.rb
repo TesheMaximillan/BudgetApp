@@ -19,7 +19,7 @@
 FactoryBot.define do
   factory :category do
     user { User.first || create(:user) }
-    name { "MyString" }
+    name { 'MyString' }
 
     link_to_default_icon = Rails.root.join('spec', 'factories', 'files', 'default_icon.jpg')
     icon { Rack::Test::UploadedFile.new(link_to_default_icon) }

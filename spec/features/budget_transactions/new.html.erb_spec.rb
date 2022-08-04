@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "categories/new.html.erb", type: :feature do
+RSpec.describe 'categories/new.html.erb', type: :feature do
   before(:example) do
     @user = build(:user)
     @category = build(:category)
@@ -13,12 +13,12 @@ RSpec.describe "categories/new.html.erb", type: :feature do
     expect(page).to have_content('NEW TRANSACTION')
   end
 
-  it "Sees Create Button" do
+  it 'Sees Create Button' do
     visit new_category_budget_transaction_path(@category.id)
     expect(page).to have_button('Create')
   end
 
-  it "Click Create Button with blank fields" do
+  it 'Click Create Button with blank fields' do
     user = create(:user)
     sign_in user
     visit new_category_budget_transaction_path(@category.id)
@@ -26,7 +26,7 @@ RSpec.describe "categories/new.html.erb", type: :feature do
     expect(page).to have_current_path(new_category_budget_transaction_path(@category.id))
   end
 
-  it "Click Create Button with invalid value" do
+  it 'Click Create Button with invalid value' do
     user = create(:user)
     sign_in user
     visit new_category_budget_transaction_path(@category.id)

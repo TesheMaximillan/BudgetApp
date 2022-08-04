@@ -9,8 +9,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: %i[name email password password_confirmation])
   end
 
-  protected
-
   def after_sign_in_path_for(resource)
     if resource.is_a?(User)
       categories_path(resource)
@@ -22,6 +20,6 @@ class ApplicationController < ActionController::Base
   private
 
   def layout_by_resource
-    devise_controller? ? "session" : "application"
+    devise_controller? ? 'session' : 'application'
   end
 end

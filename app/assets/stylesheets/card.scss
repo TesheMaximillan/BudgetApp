@@ -7,8 +7,9 @@
 
 .card {
   @include card-porperty(7rem);
+
   background-color: var(--white);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
   transition: all 0.3s ease-in-out;
   margin-bottom: 1rem;
   cursor: pointer;
@@ -60,6 +61,7 @@
 
 .transaction-card {
   @include card-porperty(5rem);
+
   justify-content: space-between;
   border: 1px solid var(--main);
   background-color: var(--white);

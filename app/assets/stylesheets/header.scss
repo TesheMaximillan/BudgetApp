@@ -18,7 +18,7 @@
 
 .logout {
   width: 5rem;
-  padding: .5rem;
+  padding: 0.5rem;
   color: var(--third);
   font-size: 1.6rem;
   font-weight: 400;
@@ -32,10 +32,10 @@
   &:hover {
     background-color: var(--third);
     color: var(--white);
-    transform: translatex(0.2rem);
+    transform: translateX(0.2rem);
   }
 
   &:active {
-    transform: translatex(-0.2rem);
+    transform: translateX(-0.2rem);
   }
 }

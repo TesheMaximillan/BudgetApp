@@ -14,9 +14,11 @@ class BudgetTransactionsController < ApplicationController
 
     if @budget_transaction.save
       @category.budget_transactions << @budget_transaction
-      redirect_to category_budget_transactions_path(category_id: @category.id), notice: 'Budget transaction was successfully created.'
+      redirect_to category_budget_transactions_path(category_id: @category.id),
+                  notice: 'Budget transaction was successfully created.'
     else
-      redirect_to new_category_budget_transaction_path(category_id: @category.id), alert: 'Budget transaction was not created.'
+      redirect_to new_category_budget_transaction_path(category_id: @category.id),
+                  alert: 'Budget transaction was not created.'
     end
   end
 end
