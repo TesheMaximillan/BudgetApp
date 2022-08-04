@@ -1,19 +1,11 @@
 <div class="header">
   <div class="header__icon">
-    <% if controller_name == 'budget_transactions' && action_name == 'index'%>
-      <%= link_to categories_path do %>
-        <i class="fa-solid fa-arrow-left icon" ></i>
-      <% end %>
-    <% elsif controller_name == 'budget_transactions' && action_name == 'new' %>
+    <% if controller_name == 'budget_transactions' && action_name == 'new' %>
       <%= link_to category_budget_transactions_path do %>
         <i class="fa-solid fa-arrow-left icon" ></i>
       <% end %>
-    <% elsif controller_name == 'categories' && action_name == 'new' %>
-      <%= link_to categories_path do %>
-        <i class="fa-solid fa-arrow-left icon" ></i>
-      <% end %>
     <% else %>
-      <%= link_to root_path do %>
+      <%= link_to categories_path do %>
         <i class="fa-solid fa-arrow-left icon" ></i>
       <% end %>
     <% end %>
@@ -27,15 +19,19 @@
       <h2 class="title">CATEGORIES</h2>
     <%- elsif controller_name == 'categories' && action_name == 'new' %>
       <h2 class="title">NEW CATEGORY</h2>
+    <%- elsif controller_name == 'budget_transactions' && action_name == 'index' %>
+      <h2 class="title">TRANSACTIONS</h2>
     <%- else %>
       <h2 class="title">NEW TRANSACTION</h2>
-    <% end %>
+  <% end %>
   </div>
   <div class="header__nav" >
     <%- if controller_name == 'sessions' %>
       <P>log In</P>
-    <%- else %>
-      <p class="title">Next</p>
+    <%- elsif controller_name == 'sessions' %>
+      <P>Sign Up</P>
+  <%- else %>
+      <%= button_to raw(' <i class="fa-solid fa-right-from-bracket"></i>'), destroy_user_session_path, method: :delete, class: 'logout' %>
     <% end %>
   </div>
 </div>
