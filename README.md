@@ -92,11 +92,11 @@ To get a local copy up and running follow this simple step:
 
 ## Screenshots
 
->> Splash Screen | Log in | Sign Up | Categories | New Categories | Transactions | New Transactions
+>> Splash Screen | Sign Up | Log in | Categories | New Categories | Transactions | New Transactions
 
 ![image](https://user-images.githubusercontent.com/51437483/182955220-58aeb90a-92fe-421c-b591-8d427e9307b4.png)
-![image](https://user-images.githubusercontent.com/51437483/182958821-031e84ba-c888-4961-b7df-0e1bfcec7917.png)
 ![image](https://user-images.githubusercontent.com/51437483/182958981-8d814fba-54d0-49ac-9cef-63ebb961bfec.png)
+![image](https://user-images.githubusercontent.com/51437483/182958821-031e84ba-c888-4961-b7df-0e1bfcec7917.png)
 ![image](https://user-images.githubusercontent.com/51437483/182956506-64c0c61f-cb24-48c7-8925-25987f707578.png)
 ![image](https://user-images.githubusercontent.com/51437483/182956712-959b1b71-405e-4e80-b7fd-c26fb9b767ac.png)
 ![image](https://user-images.githubusercontent.com/51437483/182957038-b289cddd-8e94-4df9-8b0c-e7642c5d9ec4.png)
