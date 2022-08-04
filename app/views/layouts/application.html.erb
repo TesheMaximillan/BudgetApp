@@ -11,6 +11,9 @@
 
   <body>
     <div class="container">
+      <% if controller_name != 'home' %>
+        <%= render "layouts/header" %>
+      <% end %>
       <%= render "layouts/alert" %>
       <%= yield %>
     </div>

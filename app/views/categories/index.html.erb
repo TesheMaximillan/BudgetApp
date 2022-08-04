@@ -1,6 +1,4 @@
 <div class="category-container">
-  <%= render "layouts/header" %>
-
   <div class="category-container--cards">
     <% @categories.each do |category| %>
       <%= link_to category_budget_transactions_path(category), class: "card-link" do %>
