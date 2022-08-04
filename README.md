@@ -88,7 +88,7 @@ To get a local copy up and running follow this simple step:
 
 ## Live Demo
 
-[Live Demo]()
+[Live Demo](https://coolbudgetapp.herokuapp.com/)
 
 ## Screenshots
 
