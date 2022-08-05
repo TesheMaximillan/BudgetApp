@@ -1,0 +1,18 @@
+
+<%= form_for @category, method: :post, data: { turbo: false } do |f| %>
+  <div class="form-group">
+    <div class="form-group__field">
+      <%= f.label :name, class: "hidden" %>
+      <%= f.text_field :name, autofocus: true, required: true, autocomplete: "name", placeholder: "Name", class: 'form-group__field--input' %>
+    </div>
+
+    <div class="form-group__field">
+      <%= f.label :name, class: "hidden" %>
+      <%= f.file_field :icon, placeholder: "Icon", class: "form-group__field--file" %>
+    </div>
+
+    <div class="form-group__actions">
+      <%= f.submit "Create", class: "submit-btn category-btn" %>
+    </div>
+  </div>
+<% end %>

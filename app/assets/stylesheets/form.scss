@@ -1,0 +1,179 @@
+.form-group {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  &__field {
+    .user-profile {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color: var(--white);
+      border-bottom: 1px solid var(--light-grey-2);
+      padding: 0.5rem;
+      color: var(--light-grey-2);
+
+      .img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        margin-right: 3rem;
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    &--input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid var(--light-grey-2);
+      padding: 1rem 1rem;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--text);
+      font-family: inherit;
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid var(--main-dark);
+      }
+
+      &::placeholder {
+        color: var(--light-grey-2);
+        font-family: inherit;
+      }
+    }
+
+    &--file {
+      color: var(--main);
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-family: inherit;
+
+      &::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+    }
+
+    &--file::before {
+      content: 'Upload Icon';
+      display: block;
+      width: 80%;
+      margin: 2rem 1rem;
+      padding: 1rem;
+      border: none;
+      background-color: var(--main);
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.6rem;
+      font-family: inherit;
+      color: var(--white);
+      outline: none;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__login-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 0 1rem;
+
+    .rememberable {
+      margin-right: 3rem;
+      display: flex;
+      align-items: center;
+      color: var(--text);
+
+      .checkbox {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 1px solid var(--main);
+        border-radius: 1.5rem;
+        background-color: var(--light-grey);
+        margin-right: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: var(--main-dark);
+        }
+
+        &:checked {
+          background-color: var(--main);
+        }
+      }
+    }
+  }
+
+  &__actions {
+    align-self: end;
+    width: 50%;
+    display: flex;
+    font-family: inherit;
+
+    .submit-btn {
+      width: 93%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.6rem;
+      font-family: inherit;
+      padding: 1rem;
+      border: none;
+      transition: all 0.3s ease-in-out;
+      background-color: var(--second);
+      color: var(--white);
+      cursor: pointer;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+      &:hover,
+      &:active {
+        background-color: var(--second-dark);
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.confirmable-link {
+  text-decoration: none;
+  border-bottom: 1px solid var(--main);
+  color: var(--text);
+
+  &:hover {
+    color: var(--main);
+  }
+}
+
+.signup {
+  margin-top: 3rem;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  border: none;
+  text-decoration: underline 1px var(--main);
+}
+
+.category-btn {
+  z-index: 1;
+  transform: translateY(-8.3rem);
+  margin-left: 1rem;
+}
+
+.login-btn,
+.signup-btn,
+.create-btn {
+  margin-top: 2rem;
+}
+
+.session-nav {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.6rem;
+}

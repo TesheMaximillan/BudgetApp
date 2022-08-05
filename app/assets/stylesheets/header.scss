@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--main);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+}
+
+.icon {
+  font-size: 2rem;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--white);
+}
+
+.logout {
+  width: 5rem;
+  padding: 0.5rem;
+  color: var(--third);
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: inherit;
+  border: 1px solid var(--third-light);
+  border-radius: 5rem;
+  background-color: var(--third-light);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--third);
+    color: var(--white);
+    transform: translateX(0.2rem);
+  }
+
+  &:active {
+    transform: translateX(-0.2rem);
+  }
+}

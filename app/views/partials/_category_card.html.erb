@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card__img">
+    <%= group_avatar(category.icon) %>
+  </div>
+  <div class="card__title">
+    <P><%= category.name %></P>
+  </div>
+  <% total_transaction = 0 %>
+  <% category.budget_transactions.each do |transaction| %>
+    <% total_transaction += transaction.amount %>
+  <% end %>
+  <div class="card__transaction-amount">
+    $ <%= '%.2f' % total_transaction %>
+  </div>
+</div>
