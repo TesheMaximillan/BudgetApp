@@ -4,7 +4,7 @@
 >> # Ruby on Rails capstone project - Budget App 🟢
 ***
 
-> This budget app is a capstone project at Microverse. The app is a mobile app that allows users to create a budget and track their transactions. In this app, users can create a budget and add items to their budget. They can also track their transactions and see a visual representation of their budget. the app is written in Ruby on Rails and uses a PostgreSQL database and finally, it is deployed on Heroku.
+> This budget app is a capstone project at Microverse. The app is a mobile app that allows users to create a category and track their transactions. In this app, users can create a category and add transactions to their category. They can also track their transactions and see a visual representation of their category. The app is written in Ruby on Rails and uses a PostgreSQL database and finally, it is deployed on Heroku.
 
 ## Setup
 
