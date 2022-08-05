@@ -38,7 +38,7 @@ RSpec.describe 'categories/new.html.erb', type: :feature do
     sign_in user
     visit new_category_path
     fill_in 'Name', with: 'Test Category'
-    attach_file 'Icon', "#{Rails.root}app/assets/images/default_icon.png"
+    attach_file 'Icon', "#{Rails.root}/app/assets/images/default_icon.png"
     click_button 'Create'
     expect(page).to have_current_path(categories_path)
   end
